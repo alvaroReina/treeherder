@@ -12,12 +12,5 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.RemoveField(
-            model_name='failureline',
-            name='best_classification',
-        ),
-        migrations.RemoveField(
-            model_name='failureline',
-            name='best_is_verified',
-        ),
+        migrations.RunSQL('ALTER TABLE `failure_line` DROP COLUMN `best_classification_id`, `best_is_verified`;')
     ]
